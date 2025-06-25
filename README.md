@@ -15,7 +15,6 @@ Tiny Model [Download Link](https://tinyurl.com/mtdytebs)
 │   └── model.py                # Main Model (SSL-training and fine-tuning) implementation
 │   └── Transformer_utils.py    # Transformer model implementation
 ├── datalaoders/
-│   └── pretraining_dataloader.py   # Data loading during SSL-based pretraining
 │   └── train_dataloader.py         # Data loading in supervised or fine-tuning
 ├── utils.py                # Helper functions
 ├── checkpoints/            # Output directory for checkpoints and metrics
@@ -64,11 +63,15 @@ The pretrained_model_dir is expected to be pretrained_models/MODLE_TYPE
 | `--patch_size` | Patch size for ViT input                                     | KEEP FIXED                            |
 | `--dropout`    | Dropout rate                                                 | KEEP FIXED                                 |
 
+### We updated the args so that `embed_dim`, `heads`, and `depth` are predefined for the 3 variants.
+You need to select the model type as one of (tiny-small-base).
+
+
 ### Loading from a pretrained model
 | Argument                 | Description                                                                                                                                |
 | ------------------------ |--------------------------------------------------------------------------------------------------------------------------------------------|
 | `--load_from_pretrained` | Boolean flag to use pretrained weights                                                                                                     |
-| `--pretrained_model_dir` | Directory containing pretrained checkpoint (No need to add checkpoint name -- Just its directory)                                          |
+| `--pretrained_model_dir` | Directory containing pretrained checkpoint (By default it is pretrained_models/Tiny (for tiny variant))                                    |
 | `--pretraining_epoch_id` | Epoch number of pretrained checkpoint (because we save all the pretraining epochs, so this one is to select which one do you want to load) |
 
 | Argument                 | Description                                                  | Default  |
