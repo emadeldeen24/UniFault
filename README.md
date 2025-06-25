@@ -3,6 +3,7 @@
 This repository provides a PyTorch-based training pipeline for fine-tuning 
 the UniFault Foundation model on time-series data.
 
+Tiny Model [Download Link](https://tinyurl.com/mtdytebs)
 ---
 
 ## 📁 Directory Structure
